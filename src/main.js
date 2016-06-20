@@ -4,8 +4,8 @@ import * as Row from './components/Row/Row.vue';
 import * as Text from './components/Text/Text.vue';
 
 module.exports = {
-    Col,
-    Grid,
-    Row,
-    Text,
+  Col,
+  Grid,
+  Row,
+  Text,
 };

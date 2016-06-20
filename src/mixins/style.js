@@ -1,14 +1,14 @@
 export default {
+  /**
+   * The properties
+   */
+  props: {
     /**
-     * The properties
+     * The variant styling
      */
-    props: {
-        /**
-         * The variant styling
-         */
-        variants: {
-            type: Array,
-            required: false
-        }
-    }
+    variants: {
+      type: Array,
+      required: false,
+    },
+  },
 };

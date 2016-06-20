@@ -75,10 +75,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	module.exports = {
-	    Col: Col,
-	    Grid: Grid,
-	    Row: Row,
-	    Text: Text
+	  Col: Col,
+	  Grid: Grid,
+	  Row: Row,
+	  Text: Text
 	};
 
 /***/ },
@@ -145,7 +145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Col.styl","sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".Col {\n  box-sizing: border-box;\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 100%;\n          flex: 0 0 100%;\n  max-width: 100%;\n  padding: 1rem 0.5rem 0 0.5rem;\n}\n.Col--no-gutters {\n  padding: 0;\n}\n", "", {"version":3,"sources":["/./src/components/Col/src/components/Col/Col.styl","/./src/components/Col/Col.styl","/./src/components/Col/src/assets/stylus/mixins/bem.styl"],"names":[],"mappings":"AAEA;EACE,uBAAA;EACA,oBAAA;MAAA,mBAAA;UAAA,eAAA;EACA,gBAAA;EACA,8BAAA;CCDD;ACAC;EFIE,WAAA;CCDH","file":"Col.styl","sourcesContent":["@import \"./../../assets/stylus/mixins/bem.styl\"\n\n.Col\n  box-sizing: border-box\n  flex: 0 0 100%\n  max-width: 100%\n  padding: 1rem .5rem 0 .5rem\n\n  +variant(no-gutters)\n    padding: 0\n",".Col {\n  box-sizing: border-box;\n  flex: 0 0 100%;\n  max-width: 100%;\n  padding: 1rem 0.5rem 0 0.5rem;\n}\n.Col--no-gutters {\n  padding: 0;\n}\n","has($element)\n  /&__{$element}\n    {block}\n\nvariant($modifier)\n  /&--{$modifier}\n    {block}"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -435,7 +435,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _block = __webpack_require__(7);
@@ -445,21 +445,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    /**
-	     * The mixins
-	     */
-	    mixins: [_block2.default],
+	  mixins: [_block2.default],
 	
-	    /**
-	     * The data
-	     *
-	     * @returns {object} The data
-	     */
-	    data: function data() {
-	        return {
-	            block: 'Col'
-	        };
-	    }
+	  data: function data() {
+	    return {
+	      block: 'Col'
+	    };
+	  }
 	};
 
 /***/ },
@@ -469,7 +461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _css = __webpack_require__(8);
@@ -483,23 +475,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    /**
-	     * The mixins
-	     */
-	    mixins: [_style2.default],
+	  mixins: [_style2.default],
 	
-	    computed: {
-	        /**
-	         * Computed property which will output the
-	         * corrected class names
-	         *
-	         * @returns {Array} The corrected class names
-	         */
-	
-	        classNames: function classNames() {
-	            return _css2.default.blockClasses(this.block, this.variants);
-	        }
+	  computed: {
+	    classNames: function classNames() {
+	      return _css2.default.blockClasses(this.block, this.variants);
 	    }
+	  }
 	};
 
 /***/ },
@@ -509,7 +491,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _config = __webpack_require__(9);
@@ -519,139 +501,75 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	exports.default = {
+	  contextualTypes: ['danger', 'info', 'primary', 'success', 'warning', 'dark'],
 	
-	    /**
-	     * The allowed contextual types
-	     */
-	    contextualTypes: ['danger', 'info', 'primary', 'success', 'warning', 'dark'],
-	
-	    /**
-	     * The element separator
-	     */
-	    elementSeparator: function elementSeparator() {
-	        if (Config.element_separator) {
-	            return Config.element_separator;
-	        }
-	
-	        return '__';
-	    },
-	
-	
-	    /**
-	     * The modifier separator
-	     */
-	    modifierSeparator: function modifierSeparator() {
-	        if (Config.modifier_separator) {
-	            return Config.modifier_separator;
-	        }
-	
-	        return '--';
-	    },
-	
-	
-	    /**
-	     * Method which will return the corrected contextual class
-	     *
-	     * @param element The given element
-	     * @param classType The given class type
-	     * @returns {string} The corrected contextual class
-	     */
-	    contextualClass: function contextualClass(element, classType) {
-	        var contextualClass;
-	
-	        if (classType && this.contextualTypes.indexOf(classType.toLowerCase()) !== -1) {
-	            contextualClass = this.variant(element, classType);
-	        }
-	
-	        return contextualClass;
-	    },
-	
-	
-	    /**
-	     * Method which transform an element to a BEM-element
-	     *
-	     * @param block The name of the block
-	     * @param element The name of the element
-	     * @returns {string} The corrected class
-	     */
-	    has: function has(block, element) {
-	        return block + this.elementSeparator() + element;
-	    },
-	
-	
-	    /**
-	     * Method which transforms an item to a BEM-modifier
-	     *
-	     * @param item The name of the item
-	     * @param variant The name of the variant
-	     * @returns {string} The corrected class
-	     */
-	    variant: function variant(item, _variant) {
-	        return item + this.modifierSeparator() + _variant;
-	    },
-	
-	
-	    /**
-	     * Method which will transform an item to an array of BEM-modifiers
-	     *
-	     * @param item The name of the item
-	     * @param variants The array variants
-	     */
-	    variants: function variants(item, _variants) {
-	        var _this = this;
-	
-	        var tempArray = [];
-	
-	        _variants.forEach(function (variant) {
-	            tempArray.push(_this.variant(item, variant));
-	        });
-	
-	        return tempArray;
-	    },
-	
-	
-	    /**
-	     *
-	     * @param block
-	     * @param variants
-	     * @returns {Array}
-	     */
-	    blockClasses: function blockClasses(block, variants) {
-	        var classNames = [];
-	        var modifiers = [];
-	
-	        classNames.push(block);
-	
-	        if (variants) {
-	            modifiers = this.variants(block, variants);
-	            classNames = classNames.concat(modifiers);
-	        }
-	
-	        return classNames;
-	    },
-	
-	
-	    /**
-	     *
-	     * @param block
-	     * @param element
-	     * @param variants
-	     * @returns {Array}
-	     */
-	    elementClasses: function elementClasses(block, element, variants) {
-	        var classNames = [];
-	        var modifiers = [];
-	        var elementClass = this.has(block, element);
-	
-	        classNames.push(elementClass);
-	
-	        if (variants) {
-	            modifiers = this.variants(elementClass, variants);
-	            classNames = classNames.concat(modifiers);
-	        }
-	
-	        return classNames;
+	  elementSeparator: function elementSeparator() {
+	    if (Config.element_separator) {
+	      return Config.element_separator;
 	    }
+	
+	    return '__';
+	  },
+	  modifierSeparator: function modifierSeparator() {
+	    if (Config.modifier_separator) {
+	      return Config.modifier_separator;
+	    }
+	
+	    return '--';
+	  },
+	  contextualClass: function contextualClass(element, classType) {
+	    var contextualClass = void 0;
+	
+	    if (classType && this.contextualTypes.indexOf(classType.toLowerCase()) !== -1) {
+	      contextualClass = this.variant(element, classType);
+	    }
+	
+	    return contextualClass;
+	  },
+	  has: function has(block, element) {
+	    return block + this.elementSeparator() + element;
+	  },
+	  variant: function variant(item, _variant) {
+	    return item + this.modifierSeparator() + _variant;
+	  },
+	  variants: function variants(item, _variants) {
+	    var _this = this;
+	
+	    var tempArray = [];
+	
+	    _variants.forEach(function (variant) {
+	      tempArray.push(_this.variant(item, variant));
+	    });
+	
+	    return tempArray;
+	  },
+	  blockClasses: function blockClasses(block, variants) {
+	    var classNames = [];
+	    var modifiers = [];
+	
+	    classNames.push(block);
+	
+	    if (variants) {
+	      modifiers = this.variants(block, variants);
+	      classNames = classNames.concat(modifiers);
+	    }
+	
+	    return classNames;
+	  },
+	  elementClasses: function elementClasses(block, element, variants) {
+	    var classNames = [];
+	    var modifiers = [];
+	    var elementClass = this.has(block, element);
+	
+	    classNames.push(elementClass);
+	
+	    if (variants) {
+	      modifiers = this.variants(elementClass, variants);
+	      classNames = classNames.concat(modifiers);
+	    }
+	
+	    return classNames;
+	  }
 	};
 
 /***/ },
@@ -670,28 +588,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	exports.default = {
-	    /**
-	     * The properties
-	     */
-	    props: {
-	        /**
-	         * The variant styling
-	         */
-	        variants: {
-	            type: Array,
-	            required: false
-	        }
+	  props: {
+	    variants: {
+	      type: Array,
+	      required: false
 	    }
+	  }
 	};
 
 /***/ },
 /* 11 */
 /***/ function(module, exports) {
 
-	module.exports = "";
+	module.exports = "<div\n  :classNames\n>\n\n  <slot></slot>\n\n</div>\n";
 
 /***/ },
 /* 12 */
@@ -757,7 +669,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Grid.styl","sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".Grid {\n  box-sizing: border-box;\n  padding: 0 0.5rem;\n}\n.Grid--container {\n  margin: 0 auto;\n  max-width: 1200px;\n  width: 100%;\n}\n.Grid--no-gutters {\n  padding: 0;\n}\n", "", {"version":3,"sources":["/./src/components/Grid/src/components/Grid/Grid.styl","/./src/components/Grid/Grid.styl","/./src/components/Grid/src/assets/stylus/mixins/bem.styl"],"names":[],"mappings":"AAEA;EACE,uBAAA;EACA,kBAAA;CCDD;ACEC;EFEE,eAAA;EACA,kBAAA;EACA,YAAA;CCDH;ACHC;EFOE,WAAA;CCDH","file":"Grid.styl","sourcesContent":["@import \"./../../assets/stylus/mixins/bem.styl\"\n\n.Grid\n  box-sizing: border-box\n  padding: 0 .5rem\n\n  +variant(container)\n    margin: 0 auto\n    max-width: 1200px\n    width: 100%\n\n  +variant(no-gutters)\n    padding: 0\n",".Grid {\n  box-sizing: border-box;\n  padding: 0 0.5rem;\n}\n.Grid--container {\n  margin: 0 auto;\n  max-width: 1200px;\n  width: 100%;\n}\n.Grid--no-gutters {\n  padding: 0;\n}\n","has($element)\n  /&__{$element}\n    {block}\n\nvariant($modifier)\n  /&--{$modifier}\n    {block}"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -769,7 +681,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _block = __webpack_require__(7);
@@ -779,28 +691,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    /**
-	     * The mixins
-	     */
-	    mixins: [_block2.default],
+	  mixins: [_block2.default],
 	
-	    /**
-	     * The data
-	     *
-	     * @returns {object} The data
-	     */
-	    data: function data() {
-	        return {
-	            block: 'Grid'
-	        };
-	    }
+	  data: function data() {
+	    return {
+	      block: 'Grid'
+	    };
+	  }
 	};
 
 /***/ },
 /* 16 */
 /***/ function(module, exports) {
 
-	module.exports = "";
+	module.exports = "<div\n  :classNames\n>\n\n  <slot></slot>\n\n</div>\n";
 
 /***/ },
 /* 17 */
@@ -866,7 +770,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Row.styl","sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".Row {\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 0;\n      -ms-flex: 0 1 100%;\n          flex: 0 1 100%;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  list-style: none;\n  margin: -1rem -0.5rem 1rem -0.5rem;\n  padding: 0;\n}\n.Row:last-child {\n  margin-bottom: 0;\n}\n.Row--no-gutters {\n  margin: 0;\n}\n", "", {"version":3,"sources":["/./src/components/Row/src/components/Row/Row.styl","/./src/components/Row/Row.styl","/./src/components/Row/src/assets/stylus/mixins/bem.styl"],"names":[],"mappings":"AAEA;EACE,uBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,oBAAA;MAAA,mBAAA;UAAA,eAAA;EACA,+BAAA;EAAA,8BAAA;MAAA,wBAAA;UAAA,oBAAA;EACA,oBAAA;MAAA,gBAAA;EACA,iBAAA;EACA,mCAAA;EACA,WAAA;CCDD;ADGC;EACE,iBAAA;CCDH;ACPC;EFWE,UAAA;CCDH","file":"Row.styl","sourcesContent":["@import \"./../../assets/stylus/mixins/bem.styl\"\n\n.Row\n  box-sizing: border-box\n  display: flex\n  flex: 0 1 100%\n  flex-direction: row\n  flex-wrap: wrap\n  list-style: none\n  margin: -1rem -.5rem 1rem -.5rem\n  padding: 0\n\n  &:last-child\n    margin-bottom: 0\n\n  +variant(no-gutters)\n    margin: 0\n",".Row {\n  box-sizing: border-box;\n  display: flex;\n  flex: 0 1 100%;\n  flex-direction: row;\n  flex-wrap: wrap;\n  list-style: none;\n  margin: -1rem -0.5rem 1rem -0.5rem;\n  padding: 0;\n}\n.Row:last-child {\n  margin-bottom: 0;\n}\n.Row--no-gutters {\n  margin: 0;\n}\n","has($element)\n  /&__{$element}\n    {block}\n\nvariant($modifier)\n  /&--{$modifier}\n    {block}"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -878,7 +782,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _block = __webpack_require__(7);
@@ -888,28 +792,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    /**
-	     * The mixins
-	     */
-	    mixins: [_block2.default],
+	  mixins: [_block2.default],
 	
-	    /**
-	     * The data
-	     *
-	     * @returns {object} The data
-	     */
-	    data: function data() {
-	        return {
-	            block: 'Row'
-	        };
-	    }
+	  data: function data() {
+	    return {
+	      block: 'Row'
+	    };
+	  }
 	};
 
 /***/ },
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "";
+	module.exports = "<div\n  :classNames\n>\n\n  <slot></slot>\n\n</div>\n";
 
 /***/ },
 /* 22 */
@@ -975,7 +871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Text.styl","sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".Text--left {\n  text-align: left;\n}\n.Text--right {\n  text-align: right;\n}\n.Text--center {\n  text-align: center;\n}\n", "", {"version":3,"sources":["/./src/components/Text/src/assets/stylus/mixins/bem.styl","/./src/components/Text/src/components/Text/Text.styl","/./src/components/Text/Text.styl"],"names":[],"mappings":"AAKE;ECDE,iBAAA;CCFH;AFGC;ECEE,kBAAA;CCFH;AFAC;ECKE,mBAAA;CCFH","file":"Text.styl","sourcesContent":["has($element)\n  /&__{$element}\n    {block}\n\nvariant($modifier)\n  /&--{$modifier}\n    {block}","@import \"./../../assets/stylus/mixins/bem.styl\"\n\n.Text\n  +variant(left)\n    text-align: left\n\n  +variant(right)\n    text-align: right\n\n  +variant(center)\n    text-align: center\n",".Text--left {\n  text-align: left;\n}\n.Text--right {\n  text-align: right;\n}\n.Text--center {\n  text-align: center;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -987,7 +883,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _block = __webpack_require__(7);
@@ -997,31 +893,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    /**
-	     * The mixins
-	     */
-	    mixins: [_block2.default],
+	  mixins: [_block2.default],
 	
-	    /**
-	     * The data
-	     *
-	     * @returns {object} The data
-	     */
-	    data: function data() {
-	        return {
-	            block: 'Text'
-	        };
-	    }
+	  data: function data() {
+	    return {
+	      block: 'Text'
+	    };
+	  }
 	};
 
 /***/ },
 /* 26 */
 /***/ function(module, exports) {
 
-	module.exports = "";
+	module.exports = "<div\n  :classNames\n>\n\n  <slot></slot>\n\n</div>\n";
 
 /***/ }
 /******/ ])
 });
 ;
-//# sourceMappingURL=vue-components.js.map
+//# sourceMappingURL=flexbox-grid-vue.js.map
