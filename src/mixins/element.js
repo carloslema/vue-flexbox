@@ -6,7 +6,7 @@ export default {
    * The mixins
    */
   mixins: [
-    StyleMixin
+    StyleMixin,
   ],
 
   /**
@@ -18,7 +18,7 @@ export default {
      *
      * @returns {string} The block
      */
-    block () {
+    block() {
       return this.$parent.block;
     },
 
@@ -28,8 +28,8 @@ export default {
      *
      * @returns {Array} The corrected class names
      */
-    classNames () {
+    classNames() {
       return CSSUtil.elementClasses(this.block, this.element, this.variants);
-    }
-  }
+    },
+  },
 };
