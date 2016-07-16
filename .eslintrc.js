@@ -4,14 +4,14 @@ module.exports = {
     sourceType: 'module'
   },
   extends: 'airbnb-base',
-  // required to lint *.vue files
+// required to lint *.vue files
   plugins: [
     'html'
   ],
-  // add your custom rules here
+// add your custom rules here
   'rules': {
     'import/no-unresolved': 0,
-    // allow debugger during development
+// allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'global-require': 0,
   }
