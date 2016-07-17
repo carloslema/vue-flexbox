@@ -1,4 +1,4 @@
-import BlockMixin from './../../mixins/block';
+import BlockMixin from '../../mixins/block';
 
 export default {
   /**
@@ -15,7 +15,7 @@ export default {
    */
   data() {
     return {
-      block: 'Row',
+      block: 'text',
     };
   },
 };
