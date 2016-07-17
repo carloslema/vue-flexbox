@@ -15,7 +15,7 @@ export default {
    */
   data() {
     return {
-      block: 'Grid',
+      block: 'grid',
     };
   },
 };

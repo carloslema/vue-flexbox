@@ -1,3 +1,3 @@
-<style src="./Grid.styl" lang="stylus"></style>
-<template src="./Grid.html"></template>
-<script src="./Grid.js" lang="babel"></script>
+<style src="./grid.styl" lang="stylus"></style>
+<template src="./grid.html"></template>
+<script src="./grid.js" lang="babel"></script>

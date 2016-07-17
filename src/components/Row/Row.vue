@@ -1,3 +1,3 @@
-<style src="./Row.styl" lang="stylus"></style>
-<template src="./Row.html"></template>
-<script src="./Row.js" lang="babel"></script>
+<style src="./row.styl" lang="stylus"></style>
+<template src="./row.html"></template>
+<script src="./row.js" lang="babel"></script>

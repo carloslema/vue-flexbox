@@ -1,7 +1,7 @@
-import * as Col from './components/Col/Col.vue';
-import * as Grid from './components/Grid/Grid.vue';
-import * as Row from './components/Row/Row.vue';
-import * as Text from './components/Text/Text.vue';
+import * as Col from './components/col/col.vue';
+import * as Grid from './components/grid/grid.vue';
+import * as Row from './components/row/row.vue';
+import * as Text from './components/text/text.vue';
 
 require('./assets/stylus/flexbox-grid.styl');
 
