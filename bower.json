@@ -1,22 +1,26 @@
 {
-  "name": "vue-components",
-  "description": "Vue Components",
-  "main": "src/components",
+  "name": "flexbox-grid-vue",
+  "homepage": "http://flexboxgrid.vivid-websolutions.nl",
   "authors": [
-    "Peter van Meijgaard <peter@vivid-websolutions.nl>"
+    "Vivid Websolutions <info@vivid-websolutions.nl>"
   ],
+  "description": "A simple flexbox CSS grid system using Vue",
+  "main": "dist/index.js",
   "license": "MIT",
   "keywords": [
     "vivid",
     "websolutions",
+    "flexbox",
+    "grid",
+    "stylus",
+    "bem",
+    "responsive",
+    "liquid",
+    "css",
     "vue",
-    "components",
-    "js",
     "javascript",
     "framework",
-    "styles",
-    "ES6",
-    "babel",
+    "skeleton",
     "front-end",
     "frontend"
   ],
@@ -25,8 +29,6 @@
     "es6",
     "globals"
   ],
-  "homepage": "http://vue-components.vivid-websolutions.nl",
-  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -34,7 +36,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
     "normalize.styl": "latest"
   }
 }

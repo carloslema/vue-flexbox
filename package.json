@@ -1,10 +1,14 @@
 {
-  "name": "vue-components",
-  "version": "1.0.2",
-  "description": "Vue Components",
-  "main": "dist/vue-components.js",
-  "author": "Peter van Meijgaard <peter@vivid-websolutions.nl>",
-  "private": false,
+  "name": "flexbox-grid-vue",
+  "version": "1.0.0",
+  "description": "A simple flexbox CSS grid system using Vue",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
+    "lint": "eslint --ext .js,.vue src",
+    "prepublish": "npm run lint && npm run build"
+  },
+  "author": "Vivid Websolutions <info@vivid-websolutions.nl>",
   "repository": {
     "type": "git",
     "url": "https://github.com/vivid-web/vue-components.git"
@@ -12,34 +16,25 @@
   "keywords": [
     "vivid",
     "websolutions",
+    "flexbox",
+    "grid",
+    "stylus",
+    "bem",
+    "responsive",
+    "liquid",
+    "css",
     "vue",
-    "components",
-    "vue-component",
-    "js",
     "javascript",
     "framework",
-    "BEM",
-    "ES6",
-    "babel",
+    "skeleton",
     "front-end",
     "frontend"
   ],
-  "directories": {
-    "src": "src/"
-  },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "CHANGELOG.md",
-    "src",
-    "dist"
-  ],
   "license": "MIT",
-  "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
-  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "vue": "^1.0.21"
   },
