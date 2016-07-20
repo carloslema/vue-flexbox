@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: './dist/',
     filename: 'index.js',
-    library: 'FlexboxGridVue',
+    library: 'VueFlexbox',
     libraryTarget: 'umd'
   },
   resolve: {
