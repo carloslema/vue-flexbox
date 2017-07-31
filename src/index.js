@@ -1,28 +1,25 @@
-import * as VCol from './components/col/col.vue';
-import * as VGrid from './components/grid/grid.vue';
-import * as VRow from './components/row/row.vue';
-import * as VText from './components/text/text.vue';
+import '@/assets/stylus/vue-flexbox.styl';
 
-require('./assets/stylus/flexbox-grid.styl');
-
-export const components = {
-  VCol,
-  VGrid,
-  VRow,
-  VText,
-};
+import * as Col from './components/col';
+import * as Grid from './components/grid';
+import * as Row from './components/row';
+import * as Text from './components/text';
 
 export default {
+  Col,
+  Grid,
+  Row,
+  Text,
+
   install(Vue) {
-    Object.keys(components).forEach((name) => {
-      Vue.component(name, components[name]);
-    });
+    Col.install(Vue);
+    Grid.install(Vue);
+    Row.install(Vue);
+    Text.install(Vue);
   },
 };
 
-export {
-  VCol,
-  VGrid,
-  VRow,
-  VText,
-};
+export { Col };
+export { Grid };
+export { Row };
+export { Text };
