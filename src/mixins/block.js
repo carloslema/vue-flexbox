@@ -1,23 +1,26 @@
-import CSSUtil from '../utils/css';
+import CSSUtil from '@/utils/css';
 import StyleMixin from './style';
 
 export default {
   /**
-   * The mixins
+   * The mixins used for the mixin.
    */
   mixins: [
     StyleMixin,
   ],
 
+  /**
+   * The computed properties the mixin can use.
+   */
   computed: {
     /**
-     * Computed property which will output the
-     * corrected class names
+     * Get the CSS module class names.
      *
-     * @returns {Array} The corrected class names
+     * @returns {Array} The CSS module class names.
      */
     classNames() {
-      return CSSUtil.blockClasses(this.block, this.variants);
+      return CSSUtil.getBlockClasses(this.$options.name, this.getVariants)
+        .map(className => this.getClass(className));
     },
   },
 };
